@@ -10,7 +10,7 @@ push-to-github:
   image: ubuntu:latest
   before_script:
     - apt-get clean
-    - apt-get update -y && apt-get install -y openssh-client
+    - apt-get update -y && apt-get install -y openssh-client git
     - mkdir -p /root/.ssh && chmod 700 /root/.ssh
     - echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
     - chmod 600 /root/.ssh/id_rsa
@@ -31,7 +31,7 @@ push-to-gitlab:
   image: ubuntu:latest
   before_script:
     - apt-get clean
-    - apt-get update -y && apt-get install -y openssh-client
+    - apt-get update -y && apt-get install -y openssh-client git
     - mkdir -p /root/.ssh && chmod 700 /root/.ssh
     - echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
     - chmod 600 /root/.ssh/id_rsa
