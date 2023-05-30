@@ -1,0 +1,44 @@
+#VRML_SIM R2023a utf8
+# Describe the functionality of your PROTO here.
+
+
+PROTO PipeLink85 [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 0 1 0
+  field SFString name "PipeLink85"
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    children [
+      Transform {
+        rotation 1 0 0 1.5708
+        children [
+          CadShape {
+            url [
+              "./shapes/PipeLink85.dae"
+            ]
+            castShadows FALSE
+          }
+        ]
+      }
+    ]
+    boundingObject Transform {
+      translation 0 0 0.0425
+      children [
+        Cylinder {
+          bottom FALSE
+          height 0.085
+          radius 0.02
+          top FALSE
+        }
+      ]
+    }
+    physics Physics {
+      density -1
+      mass 0.03
+    }
+  }
+}

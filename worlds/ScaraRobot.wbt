@@ -1,0 +1,101 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/robodyno/objects/BaseBoard.proto"
+EXTERNPROTO "../protos/robodyno/objects/SliderBase.proto"
+EXTERNPROTO "../protos/robodyno/slider/SliderModule.proto"
+EXTERNPROTO "../protos/robodyno/objects/TBracket.proto"
+EXTERNPROTO "../protos/robodyno/joints/Pro_P44(J).proto"
+EXTERNPROTO "../protos/robodyno/objects/PipeConnector.proto"
+EXTERNPROTO "../protos/robodyno/objects/PipeLink85.proto"
+EXTERNPROTO "../protos/robodyno/objects/CylinderConnector.proto"
+EXTERNPROTO "../protos/robodyno/joints/Pro_P12(J).proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.09598630496810329 -0.2678078669314616 -0.9586790785597603 5.398679763027853
+  position -0.8753641506734672 -1.0796180870836432 0.5312092927591455
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 0 1 -1.57
+}
+Robot {
+  children [
+    BaseBoard {
+    }
+    SliderBase {
+      translation 0 0 0.01
+    }
+    SliderModule {
+      translation 0 -0.003 0.018
+      children [
+        TBracket {
+        }
+        Pro_P44(J) {
+          translation 0 -0.046 0.03
+          rotation 0.5773489358533613 0.5773489358533613 0.5773529358529169 -2.094395307179586
+          motor_id "0x11"
+          children [
+            TBracket {
+              rotation 0 0 1 1.5708
+            }
+            PipeConnector {
+              translation -0.015 0 0.03
+              rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 2.0944
+            }
+            PipeLink85 {
+              translation 0.0325 0 0.03
+              rotation 0 1 0 1.5708
+            }
+            CylinderConnector {
+              translation 0.11 0 0.03
+              rotation 0 1 0 1.5708
+            }
+            TBracket {
+              translation 0.12 0 0.03
+              rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 2.0944
+            }
+            Pro_P44(J) {
+              translation 0.15 0 -0.016
+              motor_id "0x12"
+              children [
+                TBracket {
+                  rotation 0 0 1 -1.5707953071795862
+                }
+                PipeConnector {
+                  translation -0.015 0 0.03
+                  rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 2.0944
+                }
+                PipeLink85 {
+                  translation 0.0325 0 0.03
+                  rotation 0 1 0 1.5708
+                }
+                CylinderConnector {
+                  translation 0.11 0 0.03
+                  rotation 0 1 0 1.5708
+                }
+                TBracket {
+                  translation 0.12 0 0.03
+                  rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 2.0944
+                }
+                Pro_P12(J) {
+                  translation 0.15 0 0.076
+                  rotation 0 1 0 3.14159
+                  motor_id "0x13"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  controller "scara_robot_controller"
+}

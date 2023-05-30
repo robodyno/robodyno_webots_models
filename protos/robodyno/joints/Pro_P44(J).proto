@@ -1,0 +1,93 @@
+#VRML_SIM R2023a utf8
+# Describe the functionality of your PROTO here.
+# template language: javascript
+
+
+PROTO Pro_P44(J) [
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation    0 0 1 0
+  field SFString   motor_id    "0x10"
+  field SFFloat    position    0
+  field MFNode     children    []
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name %<= "\"Pro_P44(J)_" + fields.motor_id.value + "\"" >%
+    children[
+      Transform {
+        rotation 1 0 0 1.5708
+        children [
+          CadShape {
+            url [
+              "shapes/Joint-base.dae"
+            ]
+            castShadows FALSE
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position IS position
+              axis 0 1 0
+            }
+            device [
+              RotationalMotor {
+                name %<= "\"" + fields.motor_id.value + "::motor\"" >%
+                controlPID 30 0 0
+                maxVelocity 27
+                maxTorque 13
+                acceleration -1
+              }
+              PositionSensor {
+                name "ROBODYNO_PRO_P44"
+              }
+            ]
+            endPoint Solid {
+              rotation 0 1 0 0
+              children [
+                Transform {
+                  translation 0 0.091 0
+                  rotation 1 0 0 -1.5708
+                  children IS children
+                }
+                CadShape {
+                  url [
+                    "shapes/Joint-end.dae"
+                  ]
+                  castShadows FALSE
+                }
+              ]
+              boundingObject Transform {
+                translation 0 0.085 0
+                rotation 1 0 0 1.5708
+                children [
+                  Cylinder {
+                    height 0.012
+                    radius 0.02
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 0.03
+              }
+            }
+          }
+        ]
+      }
+    ]
+    boundingObject Transform {
+      translation 0 0 0.0395
+      children [
+        Cylinder {
+          height 0.079
+          radius 0.025
+        }
+      ]
+    }
+    physics Physics {
+      density -1
+      mass 0.34
+    }
+  }
+}

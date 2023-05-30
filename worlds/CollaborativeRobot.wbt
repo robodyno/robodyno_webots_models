@@ -1,0 +1,143 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/robodyno/joints/Pro_P44(J).proto"
+EXTERNPROTO "../protos/robodyno/objects/TBracket.proto"
+EXTERNPROTO "../protos/robodyno/objects/CylinderConnector.proto"
+EXTERNPROTO "../protos/robodyno/objects/PipeLink85.proto"
+EXTERNPROTO "../protos/robodyno/objects/BaseBoard.proto"
+EXTERNPROTO "../protos/robodyno/objects/ArmBase.proto"
+EXTERNPROTO "../protos/robodyno/objects/PipeConnector.proto"
+EXTERNPROTO "../protos/robodyno/joints/Pro_P12(J).proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.24927576230280202 0.24453413464019538 -0.9370510398714296 1.6549193126545154
+  position -0.01010904528169293 1.644164897742412 1.0605516477422856
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 0 1 1.57
+}
+Robot {
+  children [
+    Transform {
+      translation 0.12 0 0.075
+      children [
+        Pro_P44(J) {
+          rotation 0 1 0 -1.5707953071795862
+          motor_id "0x11"
+          children [
+            TBracket {
+              rotation 0 0 1 1.5708
+            }
+            Pro_P44(J) {
+              translation 0.046 0 0.03
+              rotation 0 1 0 -1.5707953071795862
+              children [
+                ArmBase {
+                  translation 0 0 0.02
+                  rotation 1 0 0 3.14159
+                }
+                BaseBoard {
+                  translation 0 0 0.02
+                }
+              ]
+            }
+          ]
+        }
+        TBracket {
+          translation -0.046 0 0.03
+          rotation 0.7071067811862364 -0.7071067811862364 9.381857096790023e-07 3.14159
+        }
+        CylinderConnector {
+          translation -0.046 0 0.03
+        }
+        PipeLink85 {
+          translation -0.046 0 0.0325
+        }
+        CylinderConnector {
+          translation -0.046 0 0.11
+          name "CylinderConnector(1)"
+        }
+        TBracket {
+          translation -0.046 0 0.12
+          rotation 0 0 1 -1.5707953071795862
+          name "TBracket(1)"
+        }
+        Pro_P44(J) {
+          translation 0 0 0.15
+          rotation 0 1 0 -1.5707953071795862
+          motor_id "0x12"
+          children [
+            TBracket {
+              rotation 0 0 1 1.5708
+            }
+            PipeConnector {
+              translation -0.015 0 0.03
+              rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 2.0944
+            }
+            PipeLink85 {
+              translation 0.0325 0 0.03
+              rotation 0 1 0 1.5708
+            }
+            CylinderConnector {
+              translation 0.11 0 0.03
+              rotation 0 1 0 1.5708
+            }
+            TBracket {
+              translation 0.12 0 0.03
+              rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 2.0944
+            }
+            Pro_P44(J) {
+              translation 0.15 0 0.076
+              rotation 0 1 0 3.14159
+              motor_id "0x13"
+              children [
+                TBracket {
+                  rotation 0 0 1 -1.5707953071795862
+                }
+                Pro_P12(J) {
+                  translation 0.046 0 0.03
+                  rotation 0 1 0 -1.5707953071795862
+                  motor_id "0x14"
+                  children [
+                    TBracket {
+                      rotation 0 0 1 1.5708
+                    }
+                    Pro_P12(J) {
+                      translation -0.046 0 0.03
+                      rotation 0 1 0 1.5708
+                      motor_id "0x15"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  boundingObject Transform {
+    translation 0.08 0 0.075
+    rotation 0 1 0 1.5708
+    children [
+      Cylinder {
+        height 0.08
+        radius 0.025
+      }
+    ]
+  }
+  physics Physics {
+    density -1
+    mass 0.2
+  }
+  controller "collaborative_robot_controller"
+}

@@ -1,0 +1,27 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/robodyno/joints/Pro_P12(J).proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.227883078994214 -0.6770385746410315 -0.6997771579268339 5.27961920180225
+  position -0.42320063049075496 -0.4101963818620338 0.530549844973553
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 1 0 0
+}
+Robot {
+  children [
+    Pro_P12(J) {
+    }
+  ]
+  controller "motor_controller"
+}

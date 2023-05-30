@@ -1,0 +1,101 @@
+#VRML_SIM R2023a utf8
+# Describe the functionality of your PROTO here.
+# template language: javascript
+
+
+PROTO SliderModule [
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation    0 0 1 0
+  field SFString   motor_id    "0x10"
+  field MFNode     children    [ ]
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name %<= "\"Slider_Module_" + fields.motor_id.value + "\"" >%
+    children [
+      Transform {
+        rotation 1 0 0 1.5708
+        children [
+          CadShape {
+            url [
+              "shapes/Slider-Base.dae"
+            ]
+            castShadows FALSE
+          }
+          Pro_P44(J) {
+            translation 0 0.42 0
+            rotation 1 0 0 1.5708
+            motor_id IS motor_id
+            children [
+              Solid {
+                translation 0 0 0.329
+                rotation 1 0 0 -1.5707953071795862
+                children [
+                  CadShape {
+                    url [
+                      "shapes/Slider-Rot.dae"
+                    ]
+                    castShadows FALSE
+                  }
+                ]
+              }
+            ]
+          }
+          SliderJoint {
+            jointParameters JointParameters {
+              axis 0 1 0
+            }
+            device [
+              LinearMotor {
+                name %<= "\"" + fields.motor_id.value + "::slider\"" >%
+                multiplier 0.0016
+                maxForce 1300
+              }
+            ]
+            endPoint Solid {
+              translation 0 -0.0975 0
+              children [
+                CadShape {
+                  url [
+                    "shapes/Slider-Slide.dae"
+                  ]
+                  castShadows FALSE
+                }
+                Transform {
+                  translation 0 0.23414 0.025
+                  children IS children
+                }
+              ]
+              boundingObject Transform {
+                translation 0 0.23414 0.0045
+                children [
+                  Box {
+                    size 0.08 0.05 0.041
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 0.1
+              }
+            }
+          }
+        ]
+      }
+    ]
+    boundingObject Transform {
+      translation 0 0.011 0.1595
+      children [
+        Box {
+          size 0.08 0.056 0.319
+        }
+      ]
+    }
+    physics Physics {
+      density -1
+      mass 2
+    }
+  }
+}

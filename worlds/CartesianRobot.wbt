@@ -1,0 +1,50 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/robodyno/objects/BaseBoard.proto"
+EXTERNPROTO "../protos/robodyno/slider/SliderModule.proto"
+EXTERNPROTO "../protos/robodyno/objects/SliderBase.proto"
+EXTERNPROTO "../protos/robodyno/objects/SliderBracket.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.35174699517637675 0.7289596238151486 0.5872749937053912 0.8908362317540292
+  position -0.7976483129765815 -0.5026161070610471 0.9458249992147425
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 0 1 -1.57
+}
+Robot {
+  children [
+    BaseBoard {
+    }
+    SliderModule {
+      translation 0.1 -0.175 0.049
+      rotation 1 0 0 -1.5707953071795862
+    }
+    SliderBase {
+      translation -0.1 0.1 0.01
+    }
+    SliderModule {
+      translation -0.1 0.097 0.018
+      motor_id "0x12"
+      children [
+        SliderBracket {
+        }
+        SliderModule {
+          translation 0.285 0 0.054
+          rotation -0.577349935856137 -0.577349935856137 0.5773509358560258 2.09439
+          motor_id "0x11"
+        }
+      ]
+    }
+  ]
+  controller "cartesian_robot_controller"
+}

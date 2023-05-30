@@ -1,0 +1,353 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/robodyno/objects/Frame.proto"
+EXTERNPROTO "../protos/robodyno/objects/DeltaBase.proto"
+EXTERNPROTO "../protos/robodyno/objects/TBracket.proto"
+EXTERNPROTO "../protos/robodyno/joints/Pro_P12(J).proto"
+EXTERNPROTO "../protos/robodyno/objects/DeltaArmLink.proto"
+EXTERNPROTO "../protos/robodyno/objects/DeltaRodLink.proto"
+EXTERNPROTO "../protos/robodyno/objects/DeltaEnd.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.07743283868209307 -0.8455110683659687 -0.5283135326340517 5.743721422203822
+  position -1.2723083109156035 -0.46491618315554806 0.9329864881558332
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 0 1 -1.57
+}
+Robot {
+  children [
+    Frame {
+    }
+    DeltaBase {
+      translation 0 0 0.5002
+    }
+    TBracket {
+      translation -0.095 0.11258 0.49
+      rotation 0.9659258492010602 -0.2588189595935602 3.4339994638889944e-07 3.14159
+    }
+    TBracket {
+      translation 0.145 0.02598 0.49
+      rotation -0.9659258492010602 -0.2588189595935602 3.4339994638889944e-07 -3.1415853071795863
+      name "TBracket(1)"
+    }
+    TBracket {
+      translation -0.05 -0.13856 0.49
+      rotation 0.7071067811862364 -0.7071067811862364 9.381857096790023e-07 3.14159
+      name "TBracket(2)"
+    }
+    Pro_P12(J) {
+      translation -0.072 0.15242 0.46
+      rotation -0.6546540159244592 -0.37796500919399895 0.6546530159244348 -2.4188553071795864
+      motor_id "0x12"
+      children [
+        DeltaArmLink {
+          rotation 0 0 1 1.5708
+        }
+        BallJoint {
+          jointParameters BallJointParameters {
+            anchor 0.12824 0 -0.0185
+          }
+          jointParameters2 JointParameters {
+          }
+          jointParameters3 JointParameters {
+            axis 1 0 0
+          }
+          endPoint Solid {
+            rotation 0 1 0 0
+            children [
+              DeltaRodLink {
+                translation 0.12824 0 -0.0185
+                rotation 0 0 0.9999999999999999 1.952
+              }
+              BallJoint {
+                jointParameters BallJointParameters {
+                  anchor 0.4067 0.11356 -0.0185
+                }
+                jointParameters2 JointParameters {
+                }
+                jointParameters3 JointParameters {
+                  axis 1 0 0
+                }
+                endPoint DeltaEnd {
+                  translation 0.40995 0.13856 0.005000000000000001
+                  rotation 0 -0.9999999999999999 0 1.5707953071795862
+                }
+              }
+            ]
+            name "solid(1)"
+            boundingObject Transform {
+              translation 0.26747 0.0558059 -0.0185
+              rotation 0.4315389907695969 0.6378769863561304 -0.6378769863561304 -2.3267953071795864
+              children [
+                Cylinder {
+                  height 0.3
+                  radius 0.003
+                }
+              ]
+            }
+            physics Physics {
+              density -1
+              mass 0.03
+            }
+          }
+        }
+        BallJoint {
+          jointParameters BallJointParameters {
+            anchor 0.12824 0 0.0285
+          }
+          jointParameters2 JointParameters {
+          }
+          jointParameters3 JointParameters {
+            axis 1 0 0
+          }
+          endPoint Solid {
+            rotation 0 1 0 0
+            children [
+              DeltaRodLink {
+                translation 0.12824 0 0.0285
+                rotation -0.8282627876462866 0.5603398563375646 3.971428981787298e-09 3.14159
+              }
+              BallJoint {
+                jointParameters BallJointParameters {
+                  anchor 0.4067 0.11356 0.0285
+                }
+                jointParameters2 JointParameters {
+                }
+                jointParameters3 JointParameters {
+                  axis 1 0 0
+                }
+                endPoint SolidReference {
+                  solidName "DeltaEnd"
+                }
+              }
+            ]
+            boundingObject Transform {
+              translation 0.26747 0.0558059 0.0285
+              rotation -0.7225593284166567 0.48882922218197533 -0.48882922218197533 1.89018
+              children [
+                Cylinder {
+                  height 0.3
+                  radius 0.003
+                }
+              ]
+            }
+            physics Physics {
+            }
+          }
+        }
+      ]
+    }
+    Pro_P12(J) {
+      translation 0.168 -0.01386 0.46
+      rotation -0.6546542633605892 0.3779641520510403 0.6546532633601869 2.41886
+      motor_id "0x11"
+      children [
+        DeltaArmLink {
+          rotation 0 0 1 1.5708
+        }
+        BallJoint {
+          jointParameters BallJointParameters {
+            anchor 0.12824 0 -0.0185
+          }
+          jointParameters2 JointParameters {
+          }
+          jointParameters3 JointParameters {
+            axis 1 0 0
+          }
+          endPoint Solid {
+            rotation 0 1 0 0
+            children [
+              DeltaRodLink {
+                translation 0.12824 0 -0.0185
+                rotation 0 0 0.9999999999999999 1.952
+              }
+              BallJoint {
+                jointParameters BallJointParameters {
+                  anchor 0.4067 0.11356 -0.0185
+                }
+                jointParameters2 JointParameters {
+                }
+                jointParameters3 JointParameters {
+                  axis 1 0 0
+                }
+                endPoint SolidReference {
+                  solidName "DeltaEnd"
+                }
+              }
+            ]
+            name "solid(1)"
+            boundingObject Transform {
+              translation 0.26747 0.0558059 -0.0185
+              rotation 0.4315389907695969 0.6378769863561304 -0.6378769863561304 -2.3267953071795864
+              children [
+                Cylinder {
+                  height 0.3
+                  radius 0.003
+                }
+              ]
+            }
+            physics Physics {
+              density -1
+              mass 0.03
+            }
+          }
+        }
+        BallJoint {
+          jointParameters BallJointParameters {
+            anchor 0.12824 0 0.0285
+          }
+          jointParameters2 JointParameters {
+          }
+          jointParameters3 JointParameters {
+            axis 1 0 0
+          }
+          endPoint Solid {
+            rotation 0 1 0 0
+            children [
+              DeltaRodLink {
+                translation 0.12824 0 0.0285
+                rotation -0.8282627876462866 0.5603398563375646 3.971428981787298e-09 3.14159
+              }
+              BallJoint {
+                jointParameters BallJointParameters {
+                  anchor 0.4067 0.11356 0.0285
+                }
+                jointParameters2 JointParameters {
+                }
+                jointParameters3 JointParameters {
+                  axis 1 0 0
+                }
+                endPoint SolidReference {
+                  solidName "DeltaEnd"
+                }
+              }
+            ]
+            boundingObject Transform {
+              translation 0.26747 0.0558059 0.0285
+              rotation -0.7225593284166567 0.48882922218197533 -0.48882922218197533 1.89018
+              children [
+                Cylinder {
+                  height 0.3
+                  radius 0.003
+                }
+              ]
+            }
+            physics Physics {
+            }
+          }
+        }
+      ]
+    }
+    Pro_P12(J) {
+      translation -0.096 -0.13856 0.46
+      rotation 0 1 0 1.5708
+      children [
+        DeltaArmLink {
+          rotation 0 0 1 1.5708
+        }
+        BallJoint {
+          jointParameters BallJointParameters {
+            anchor 0.12824 0 -0.0185
+          }
+          jointParameters2 JointParameters {
+          }
+          jointParameters3 JointParameters {
+            axis 1 0 0
+          }
+          endPoint Solid {
+            rotation 0 1 0 0
+            children [
+              DeltaRodLink {
+                translation 0.12824 0 -0.0185
+                rotation 0 0 0.9999999999999999 1.952
+              }
+              BallJoint {
+                jointParameters BallJointParameters {
+                  anchor 0.4067 0.11356 -0.0185
+                }
+                jointParameters2 JointParameters {
+                }
+                jointParameters3 JointParameters {
+                  axis 1 0 0
+                }
+                endPoint SolidReference {
+                  solidName "DeltaEnd"
+                }
+              }
+            ]
+            name "solid(1)"
+            boundingObject Transform {
+              translation 0.26747 0.0558059 -0.0185
+              rotation 0.4315389907695969 0.6378769863561304 -0.6378769863561304 -2.3267953071795864
+              children [
+                Cylinder {
+                  height 0.3
+                  radius 0.003
+                }
+              ]
+            }
+            physics Physics {
+              density -1
+              mass 0.03
+            }
+          }
+        }
+        BallJoint {
+          jointParameters BallJointParameters {
+            anchor 0.12824 0 0.0285
+          }
+          jointParameters2 JointParameters {
+          }
+          jointParameters3 JointParameters {
+            axis 1 0 0
+          }
+          endPoint Solid {
+            rotation 0 1 0 0
+            children [
+              DeltaRodLink {
+                translation 0.12824 0 0.0285
+                rotation -0.8282627876462866 0.5603398563375646 3.971428981787298e-09 3.14159
+              }
+              BallJoint {
+                jointParameters BallJointParameters {
+                  anchor 0.4067 0.11356 0.0285
+                }
+                jointParameters2 JointParameters {
+                }
+                jointParameters3 JointParameters {
+                  axis 1 0 0
+                }
+                endPoint SolidReference {
+                  solidName "DeltaEnd"
+                }
+              }
+            ]
+            boundingObject Transform {
+              translation 0.26747 0.0558059 0.0285
+              rotation -0.7225593284166567 0.48882922218197533 -0.48882922218197533 1.89018
+              children [
+                Cylinder {
+                  height 0.3
+                  radius 0.003
+                }
+              ]
+            }
+            physics Physics {
+            }
+          }
+        }
+      ]
+    }
+  ]
+  controller "delta_robot_controller"
+}
