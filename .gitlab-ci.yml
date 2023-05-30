@@ -19,6 +19,7 @@ push-to-github:
   script:
     - git config --global user.email "${CI_EMAIL}"
     - git config --global user.name "${CI_USERNAME}"
+    - git checkout -b main
     - git remote set-url origin ${GITHUB_REPO}
     - git push --force origin main
 
@@ -40,5 +41,6 @@ push-to-gitlab:
   script:
     - git config --global user.email "${CI_EMAIL}"
     - git config --global user.name "${CI_USERNAME}"
+    - git checkout -b main
     - git remote set-url origin ${GITEE_REPO}
     - git push --force origin main
